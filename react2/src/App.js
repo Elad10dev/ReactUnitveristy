@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./global.css";
 
 /*class App extends Component {
   
@@ -22,7 +23,7 @@ import React, { Component } from "react";
   }
 }*/
 
-class PersistenciaEventos extends Component {
+/*class PersistenciaEventos extends Component {
   state = {
     color: "green",
   };
@@ -51,6 +52,40 @@ const App = () => (
   <div>
     <PersistenciaEventos />
   </div>
-);
+);*/
+class Hijo extends Component {
+  manejadorClick = () => {
+    this.props.onSaluda("Ninja en React 🔥");
+  }
+  render() {
+    return (
+      <div className="box blue">
+        <h2>Hijo</h2>
+        
+        <button onClick={this.manejadorClick}>Saluda</button>
+      </div>
+    );
+  }
+}
+class App extends Component {
+  state = {
+    name:''
+  }
+  manejador = (name) => {
+    this.setState({
+      name
+    });
+  }
+  render() {
+    return (
+      <div className="box red">
+        <Hijo 
+        onSaluda={this.manejador}
+        />
+        <h1> {this.state.name} </h1>
+      </div>
+    );
+  }
+}
 
 export default App;
