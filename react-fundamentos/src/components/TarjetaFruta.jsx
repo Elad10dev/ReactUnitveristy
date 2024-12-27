@@ -1,19 +1,13 @@
+import React from 'react';
+import './TarjetaFruta.css';  // Asegúrate de importar el archivo CSS
+
 function TarjetaFruta({ name, price, cantidad, agregar, quitar, limpiar }) {
   const subtotal = price * cantidad;
-  const hasItem = cantidad > 0
-  const styles = {
-
-    border: '1px solid black',
-    marginBottom: '1rem',
-    borderRadius: '0.5rem',
-    padding: '1rem',
-    backgroundColor: hasItem ? 'seagreen' : 'lightcoral',
-    color: hasItem ? '#fff' : '#000',
-    transition: 'all 0.4s ease-in-out',
-  };
+  const hasItem = cantidad > 0;
+  const clases = `tarjeta-fruta ${hasItem ? 'has-item' : 'no-item'}`
 
   return (
-    <div style={styles}>
+    <div className={clases}>
       <h3>{name}</h3>
       <div>Cantidad: {cantidad}</div>
       <button onClick={agregar}>+</button>

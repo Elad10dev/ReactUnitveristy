@@ -1,0 +1,18 @@
+.tarjeta-fruta {
+    border: 1px solid black;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.4s ease-in-out;
+  }
+  
+  .tarjeta-fruta.has-item {
+    background-color: seagreen;
+    color: #fff;
+  }
+  
+  .tarjeta-fruta.no-item {
+    background-color: lightcoral;
+    color: #000;
+  }
+  
